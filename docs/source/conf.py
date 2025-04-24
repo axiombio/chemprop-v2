@@ -10,9 +10,9 @@ sys.path.insert(0, os.path.abspath("../.."))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Chemprop"
-copyright = "2024, Chemprop developers"
-author = "Chemprop developers"
+project = "chemprop2"
+copyright = "2024, chemprop2 developers"
+author = "chemprop2 developers"
 release = "2.1.2"
 
 # -- General configuration ---------------------------------------------------

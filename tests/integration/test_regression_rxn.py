@@ -1,4 +1,4 @@
-"""This integration test is designed to ensure that the chemprop model can _overfit_ the training
+"""This integration test is designed to ensure that the chemprop2 model can _overfit_ the training
 data. A small enough dataset should be memorizable by even a moderately sized model, so this test
 should generally pass."""
 
@@ -7,9 +7,9 @@ import pytest
 import torch
 from torch.utils.data import DataLoader
 
-from chemprop import nn
-from chemprop.data import ReactionDatapoint, ReactionDataset, collate_batch
-from chemprop.featurizers.molgraph import CondensedGraphOfReactionFeaturizer
+from chemprop2 import nn
+from chemprop2.data import ReactionDatapoint, ReactionDataset, collate_batch
+from chemprop2.featurizers.molgraph import CondensedGraphOfReactionFeaturizer
 
 SHAPE = CondensedGraphOfReactionFeaturizer().shape
 pytestmark = pytest.mark.parametrize(

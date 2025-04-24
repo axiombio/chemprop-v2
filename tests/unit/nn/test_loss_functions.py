@@ -1,10 +1,10 @@
-"""Chemprop unit tests for chemprop/models/loss.py"""
+"""chemprop2 unit tests for chemprop2/models/loss.py"""
 
 import numpy as np
 import pytest
 import torch
 
-from chemprop.nn.metrics import (
+from chemprop2.nn.metrics import (
     SID,
     BCELoss,
     BinaryMCCLoss,

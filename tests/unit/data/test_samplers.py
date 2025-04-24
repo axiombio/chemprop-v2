@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from chemprop.data import ClassBalanceSampler, MoleculeDatapoint, MoleculeDataset, SeededSampler
-from chemprop.featurizers.molgraph import SimpleMoleculeMolGraphFeaturizer
+from chemprop2.data import ClassBalanceSampler, MoleculeDatapoint, MoleculeDataset, SeededSampler
+from chemprop2.featurizers.molgraph import SimpleMoleculeMolGraphFeaturizer
 
 
 @pytest.fixture(params=[0.0, 0.1, 0.5, 1.0])

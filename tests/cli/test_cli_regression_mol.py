@@ -6,10 +6,10 @@ import json
 import pytest
 import torch
 
-from chemprop.cli.hpopt import NO_HYPEROPT, NO_OPTUNA, NO_RAY
-from chemprop.cli.main import main
-from chemprop.cli.train import TrainSubcommand
-from chemprop.models.model import MPNN
+from chemprop2.cli.hpopt import NO_HYPEROPT, NO_OPTUNA, NO_RAY
+from chemprop2.cli.main import main
+from chemprop2.cli.train import TrainSubcommand
+from chemprop2.models.model import MPNN
 
 pytestmark = pytest.mark.CLI
 
@@ -54,7 +54,7 @@ def test_train_quick(monkeypatch, data_path):
     input_path, *_ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -72,7 +72,7 @@ def test_train_quick(monkeypatch, data_path):
 
 def test_train_config(monkeypatch, config_path, tmp_path):
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "--config-path",
         config_path,
@@ -111,7 +111,7 @@ def test_train_quick_features(monkeypatch, data_path):
     ) = data_path
 
     base_args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -147,7 +147,7 @@ def test_train_quick_features(monkeypatch, data_path):
 
 def test_predict_quick(monkeypatch, data_path, model_path):
     input_path, *_ = data_path
-    args = ["chemprop", "predict", "-i", input_path, "--model-path", model_path]
+    args = ["chemprop2", "predict", "-i", input_path, "--model-path", model_path]
 
     with monkeypatch.context() as m:
         m.setattr("sys.argv", args)
@@ -157,7 +157,7 @@ def test_predict_quick(monkeypatch, data_path, model_path):
 def test_predict_ensemble_quick(monkeypatch, data_path, model_path, extra_model_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "predict",
         "-i",
         input_path,
@@ -176,7 +176,7 @@ def test_predict_ensemble_quick(monkeypatch, data_path, model_path, extra_model_
 def test_predict_dropout_quick(monkeypatch, data_path, model_path, extra_model_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "predict",
         "-i",
         input_path,
@@ -195,7 +195,7 @@ def test_predict_dropout_quick(monkeypatch, data_path, model_path, extra_model_p
 def test_predict_mve_quick(monkeypatch, data_path, mve_model_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "predict",
         "-i",
         input_path,
@@ -222,7 +222,7 @@ def test_predict_mve_quick(monkeypatch, data_path, mve_model_path):
 def test_predict_evidential_quick(monkeypatch, data_path, evidential_model_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "predict",
         "-i",
         input_path,
@@ -250,7 +250,7 @@ def test_predict_evidential_quick(monkeypatch, data_path, evidential_model_path)
 def test_fingerprint_quick(monkeypatch, data_path, model_path, ffn_block_index):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "fingerprint",
         "-i",
         input_path,
@@ -268,7 +268,7 @@ def test_fingerprint_quick(monkeypatch, data_path, model_path, ffn_block_index):
 def test_train_output_structure(monkeypatch, data_path, tmp_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -295,7 +295,7 @@ def test_train_output_structure(monkeypatch, data_path, tmp_path):
 def test_train_output_structure_replicate_ensemble(monkeypatch, data_path, tmp_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -332,7 +332,7 @@ def test_train_output_structure_replicate_ensemble(monkeypatch, data_path, tmp_p
 def test_train_csv_splits(monkeypatch, data_dir, tmp_path):
     input_path = str(data_dir / "regression" / "mol" / "mol_with_splits.csv")
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -367,7 +367,7 @@ def test_train_splits_file(monkeypatch, data_path, tmp_path):
         json.dump(splits, f)
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -389,7 +389,7 @@ def test_train_splits_file(monkeypatch, data_path, tmp_path):
 def test_predict_output_structure(monkeypatch, data_path, model_path, tmp_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "predict",
         "-i",
         input_path,
@@ -414,7 +414,7 @@ def test_fingerprint_output_structure(
 ):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "fingerprint",
         "-i",
         input_path,
@@ -437,7 +437,7 @@ def test_train_outputs(monkeypatch, data_path, tmp_path):
     input_path, *_ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -462,7 +462,7 @@ def test_train_outputs(monkeypatch, data_path, tmp_path):
 def test_freeze_model(monkeypatch, data_path, model_path, tmp_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -499,7 +499,7 @@ def test_freeze_model(monkeypatch, data_path, model_path, tmp_path):
 def test_checkpoint_model(monkeypatch, data_path, model_path, tmp_path):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -528,7 +528,7 @@ def test_optuna_quick(monkeypatch, data_path, tmp_path):
     input_path, *_ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "hpopt",
         "-i",
         input_path,
@@ -556,7 +556,7 @@ def test_optuna_quick(monkeypatch, data_path, tmp_path):
     assert (tmp_path / "ray_results").exists()
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "--config-path",
         str(tmp_path / "best_config.toml"),
@@ -576,7 +576,7 @@ def test_hyperopt_quick(monkeypatch, data_path, tmp_path):
     input_path, *_ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "hpopt",
         "-i",
         input_path,
@@ -604,7 +604,7 @@ def test_hyperopt_quick(monkeypatch, data_path, tmp_path):
     assert (tmp_path / "ray_results").exists()
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "--config-path",
         str(tmp_path / "best_config.toml"),

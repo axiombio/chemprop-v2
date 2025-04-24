@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from chemprop.data import MoleculeDatapoint
+from chemprop2.data import MoleculeDatapoint
 
 SMI = "c1ccccc1"
 

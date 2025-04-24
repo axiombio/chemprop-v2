@@ -5,7 +5,7 @@ import json
 
 import pytest
 
-from chemprop.cli.main import main
+from chemprop2.cli.main import main
 
 pytestmark = pytest.mark.CLI
 
@@ -38,7 +38,7 @@ def test_train_quick(monkeypatch, data_path):
     ) = data_path
 
     base_args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -82,7 +82,7 @@ def test_predict_quick(monkeypatch, data_path, model_path):
     input_path, _, _, _, _, _ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "predict",
         "-i",
         input_path,
@@ -102,7 +102,7 @@ def test_predict_quick(monkeypatch, data_path, model_path):
 def test_fingerprint_quick(monkeypatch, data_path, model_path, ffn_block_index):
     input_path, _, _, _, _, _ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "fingerprint",
         "-i",
         input_path,
@@ -124,7 +124,7 @@ def test_train_output_structure(monkeypatch, data_path, tmp_path):
     input_path, *_ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -157,7 +157,7 @@ def test_fingerprint_output_structure(
 ):
     input_path, *_ = data_path
     args = [
-        "chemprop",
+        "chemprop2",
         "fingerprint",
         "-i",
         input_path,
@@ -192,7 +192,7 @@ def test_train_splits_file(monkeypatch, data_path, tmp_path):
     input_path, *_ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,
@@ -218,7 +218,7 @@ def test_train_molecule_featurizers(monkeypatch, data_path):
     input_path, descriptors_path, *_ = data_path
 
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         input_path,

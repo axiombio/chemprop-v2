@@ -6,7 +6,7 @@ import pytest
 from rdkit import Chem
 from rdkit.Chem.rdchem import HybridizationType
 
-from chemprop.featurizers import MultiHotAtomFeaturizer
+from chemprop2.featurizers import MultiHotAtomFeaturizer
 
 SMI = "Cn1nc(CC(=O)Nc2ccc3oc4ccccc4c3c2)c2ccccc2c1=O"
 

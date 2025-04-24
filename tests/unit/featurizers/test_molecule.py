@@ -5,7 +5,7 @@ import numpy as np
 import pytest
 from rdkit import Chem
 
-from chemprop.featurizers import (
+from chemprop2.featurizers import (
     MorganBinaryFeaturizer,
     MorganCountFeaturizer,
     RDKit2DFeaturizer,

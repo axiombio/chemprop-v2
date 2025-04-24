@@ -3,7 +3,7 @@
 
 import pytest
 
-from chemprop.cli.main import main
+from chemprop2.cli.main import main
 
 pytestmark = pytest.mark.CLI
 
@@ -20,7 +20,7 @@ def model_path(data_dir):
 
 def test_train_quick(monkeypatch, data_path):
     args = [
-        "chemprop",
+        "chemprop2",
         "train",
         "-i",
         data_path,
@@ -37,13 +37,13 @@ def test_train_quick(monkeypatch, data_path):
 
 
 def test_predict_quick(monkeypatch, data_path, model_path):
-    args = ["chemprop", "predict", "-i", data_path, "--model-path", model_path]
+    args = ["chemprop2", "predict", "-i", data_path, "--model-path", model_path]
 
     with monkeypatch.context() as m:
         m.setattr("sys.argv", args)
         main()
 
-    args = ["chemprop", "predict", "-i", data_path, "--model-path", model_path]
+    args = ["chemprop2", "predict", "-i", data_path, "--model-path", model_path]
 
     with monkeypatch.context() as m:
         m.setattr("sys.argv", args)
@@ -53,7 +53,7 @@ def test_predict_quick(monkeypatch, data_path, model_path):
 @pytest.mark.parametrize("ffn_block_index", ["0", "1"])
 def test_fingerprint_quick(monkeypatch, data_path, model_path, ffn_block_index):
     args = [
-        "chemprop",
+        "chemprop2",
         "fingerprint",
         "-i",
         data_path,

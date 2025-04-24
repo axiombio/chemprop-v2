@@ -4,13 +4,13 @@ from lightning import pytorch as pl
 import numpy as np
 import pytest
 
-from chemprop.data.dataloader import build_dataloader
-from chemprop.data.datapoints import MoleculeDatapoint
-from chemprop.data.datasets import MoleculeDataset
-from chemprop.featurizers.atom import MultiHotAtomFeaturizer
-from chemprop.featurizers.molgraph.molecule import SimpleMoleculeMolGraphFeaturizer
-from chemprop.models.model import MPNN
-from chemprop.utils.v1_to_v2 import convert_model_file_v1_to_v2
+from chemprop2.data.dataloader import build_dataloader
+from chemprop2.data.datapoints import MoleculeDatapoint
+from chemprop2.data.datasets import MoleculeDataset
+from chemprop2.featurizers.atom import MultiHotAtomFeaturizer
+from chemprop2.featurizers.molgraph.molecule import SimpleMoleculeMolGraphFeaturizer
+from chemprop2.models.model import MPNN
+from chemprop2.utils.v1_to_v2 import convert_model_file_v1_to_v2
 
 
 @pytest.fixture

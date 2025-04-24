@@ -3,7 +3,7 @@ import pytest
 from sklearn.preprocessing import StandardScaler
 import torch
 
-from chemprop.nn.transforms import GraphTransform, ScaleTransform, UnscaleTransform
+from chemprop2.nn.transforms import GraphTransform, ScaleTransform, UnscaleTransform
 
 
 class MockBatchMolGraph:

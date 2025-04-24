@@ -2,9 +2,9 @@ import numpy as np
 import pytest
 import torch
 
-from chemprop.data.collate import BatchMolGraph, collate_batch
-from chemprop.data.datasets import Datum
-from chemprop.data.molgraph import MolGraph
+from chemprop2.data.collate import BatchMolGraph, collate_batch
+from chemprop2.data.datasets import Datum
+from chemprop2.data.molgraph import MolGraph
 
 
 @pytest.fixture

@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 from rdkit import Chem
 
-from chemprop.featurizers import MultiHotBondFeaturizer
+from chemprop2.featurizers import MultiHotBondFeaturizer
 
 SMI = "Cn1nc(CC(=O)Nc2ccc3oc4ccccc4c3c2)c2ccccc2c1=O"
 
