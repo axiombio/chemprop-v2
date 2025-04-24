@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "chemprop"
+name = "chemprop2"
 description = "Molecular Property Prediction with Message Passing Neural Networks"
 version = "2.1.2"
 authors = [
